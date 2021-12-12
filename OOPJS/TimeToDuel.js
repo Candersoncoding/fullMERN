@@ -42,11 +42,11 @@ class Effect extends Card{
 
             if(this.stat == "resilience"){
                 target.resilience += this.magnitude;
-                this.text += `resilience by ${this.magnitude}.`;
+                this.text += `resilience by ${Math.abs(this.magnitude)}.`;
             }
             else if(this.stat == "power"){
                 target.power += this.magnitude;
-                this.text += `power by ${this.magnitude}.`;
+                this.text += `power by ${Math.abs(this.magnitude)}.`;
             }
 
         console.log(this.text);
