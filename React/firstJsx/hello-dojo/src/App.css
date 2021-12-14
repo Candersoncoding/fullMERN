@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+  background-color: rgb(21, 21, 22);
+}
+
+body > #root > div {
+  height: 100vh;
+}
