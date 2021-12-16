@@ -18,11 +18,35 @@
 }
 
 .componentCarContainer{
-  height: 800px;
-  width: 600px;
+  height: 1000px;
+  width: 700px;
   background-color: #ffa200;
   background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239b6200' fill-opacity='0.46'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  margin: 30px;
+  margin: 20px;
+  border-radius: 15px;
+}
+
+.crushButton{
+  width: 150px;
+}
+
+.truckPictures, .junkCarPicture{
+  max-height: 300px;
+  width: 500px;
+}
+
+.truckTitle{
+  background-color: white;
+  border: solid 2px rgb(124, 83, 0);
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px 0px 10px 0px;
+  opacity: .5;
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: space-evenly;
 }
 
 body > #root > div {
