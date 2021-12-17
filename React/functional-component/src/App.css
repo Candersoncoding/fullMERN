@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+.thumbsUp{
+  height: 50px;
+  width: 50px;
+}
+
+body > #root > div {
+  height: 100vh;
+}
