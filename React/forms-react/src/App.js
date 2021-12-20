@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainForm from './Components/MainForm.jsx';
+import PizzaForm from './Views/PizzaForm.jsx';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <h1>Welcome to Pizza Man!</h1>
       </header>
       <MainForm />
+      <PizzaForm />
     </div>
   );
 }
