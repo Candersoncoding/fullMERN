@@ -10,8 +10,8 @@ const Details = (props) => {
     const [ballPicture, setBallPicture] = useState("");
 
     const ballStyle = {
-        maxHeight: 500,
-        maxWidth: 500
+        height: 500,
+        width: 500
     }
 
     useEffect(()=>{
