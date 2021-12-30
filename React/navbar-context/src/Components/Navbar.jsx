@@ -1,10 +1,10 @@
 import React, {useContext} from "react";
-import WrapperContext from "../Context/WrapperContext";
+
 
 
 const Navbar = (props) => {
 
-    const nameContext = useContext(WrapperContext)
+    const nameContext = useContext()
     const navbarStyle = {
         backgroundColor: "violet",
         height: "200px",
@@ -15,7 +15,7 @@ const Navbar = (props) => {
 
     return(
         <div>
-            <nav style="navbarStyle"><h1>Hi {nameContext}</h1></nav>
+            <nav style="navbarStyle"><h1>Hi {nameContext}!</h1></nav>
         </div>
     )
 }

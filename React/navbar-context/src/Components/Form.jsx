@@ -1,20 +1,21 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import { NameContext } from './Wrapper';
 
 
 const Form = (props) => {
 
-    // const [currentName, setCurrentName] = useState("");
+    const name = useContext(NameContext);
 
     const onSubmitForm = (event) => {
-        setCurrentName(event.target.value);
+        name = (event.target.value);
     }
 
     return(
         <div>
             <form onSubmit={onSubmitForm}>
                 <div className='form-floating'>
-                    <input className="form-control" type="text" name="userName" placeholder="Default input" onChange={(event)=>event.target.value}/>
-                    <label htmlFor="floatingUserName">Your Name:</label>
+                    <input className="form-control" type="text" name="name" placeholder="Default input" onChange={(event)=>event.target.value}/>
+                    <label htmlFor="floatingName">Your Name:</label>
                 </div>
                 <input type="submit" value="Change Name" />
             </form>

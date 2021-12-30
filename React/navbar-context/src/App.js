@@ -5,19 +5,19 @@ import Form from './Components/Form.jsx';
 import FormWrapper from './Components/FormWrapper.jsx';
 import Navbar from './Components/Navbar.jsx';
 import Wrapper from './Components/Wrapper.jsx';
-import WrapperContext from './Context/WrapperContext';
+
+
 
 
 function App() {
 
-  const [currentName, setCurrentName] = useState("");
-
+  
   return (
     <div className="App">
-      <Wrapper.Provider value={{currentName, setCurrentName}}>
+      <Wrapper>
         <Navbar />
         <FormWrapper />
-      </Wrapper.Provider>
+      </Wrapper>
     </div>
   );
 }

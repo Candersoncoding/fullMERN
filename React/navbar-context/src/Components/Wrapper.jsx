@@ -1,15 +1,16 @@
-import React, { useState} from "react";
-import FormWrapper from "./FormWrapper";
-import Navbar from "./Navbar";
+import React, { useState, createContext } from "react";
 
-const Wrapper = (props) => {
 
+export const NameContext = createContext();
+
+export default function Wrapper ({children}) {
+
+    const [currentName, setCurrentName] = useState("");
 
     return(
-        <div>
-            
-        </div>
+        <NameContext.Provider value={currentName, setCurrentName}>
+            {children}
+        </NameContext.Provider>
     )
 }
 
-export default Wrapper;
