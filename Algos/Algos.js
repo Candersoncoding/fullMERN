@@ -37,3 +37,29 @@ function solution(n, firstNumber) {
         return (((n/2) + firstNumber)-n)  
     }
 }
+
+// Migratory Birds
+
+function migratoryBirds(arr) {
+    // Write your code here
+    let newArr = [0];
+    let max = 0;
+    let hold = 0;
+        arr.sort().map((item, i) => {
+            if(arr[i] != arr[i+1]){
+            newArr.push(arr.filter(num => num == arr[i]).length), newArr.push(arr[i])
+            }})
+    for(let i = 1; i < newArr.length; i++){
+        if((i % 2 == 1) && (newArr[i] > max)){
+            max = newArr[i]
+            hold = newArr[i+1];
+            console.log(max)
+        }
+        else{
+            console.log('next');
+        }
+    }
+    console.log(max)
+    console.log(newArr)
+    return hold;
+}
