@@ -3,6 +3,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Router} from '@reach/router';
 import Main from './Views/Main.jsx';
+import People from './Views/People.jsx';
+import Planets from './Views/Planets.jsx';
 
 function App() {
   return (

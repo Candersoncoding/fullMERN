@@ -19,3 +19,5 @@ const People = (props) => {
         </div>
     )
 }
+
+export default People;
