@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react';
+import { navigate } from '@reach/router';
 import axios from 'axios';
+import Planets from '../Views/Planets.jsx';
+import People from '../Views/People.jsx';
 
 
 const Form = (props) =>{
@@ -7,12 +10,13 @@ const Form = (props) =>{
     const [currentData, setCurrentData] = useState({})
     const [selected, setSelected] = useState("");
     const [id, setId] = useState();
+    const [go, setGo] = useState(0);
+
         
     const handleSubmission = (event) =>{
         event.preventDefault();
-        axios.get(`https://swapi.dev/api/${selected}/${id}`)
-            .then(res=> setCurrentData(res.data))
-            .catch(err=> console.log(err.data))
+        setGo(go+1);
+        navigate(`/${selected}/${id}`);
     };
 
     return(
@@ -30,7 +34,10 @@ const Form = (props) =>{
                 <input type="submit" value="Use the Force" className='btn btn-primary'/>
             </form>
             
-            <p>{currentData.name}</p>
+            {/* <p>{currentData.name}</p> */}
+            {selected === "people" &  go > 0 ? <People data={currentData} select={selected} selectId={id}/> :
+            selected === "planets" & go > 0 ? <Planets data={currentData} select={selected} selectId={id}/> :
+            console.log("type in an id and select people or planets.")}
         </div>
     )
 }
