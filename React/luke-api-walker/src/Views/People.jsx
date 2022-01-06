@@ -6,23 +6,24 @@ import axios from 'axios';
 const People = (props) => {
 
     const [peopleData, setPeopleData] = useState({});
-    // useEffect(()=>{
-    //     axios.get(`https://swapi.dev/api/${props.select}/${props.selectedId}`)
-    //         .then(res=> {setPeopleData(res.data)})
-    //         .catch(err=> console.log(err.data))
-    // })
+    useEffect(()=>{
+        axios.get(`https://swapi.dev/api/people/${props._id}`)
+            .then(res=> {setPeopleData(res.data)})
+            .catch(err=> console.log(err.data))
+    })
     
     
     
     return(
         <div>
+            <Form />
             <div class="jumbotron">
-                <h1 class="display-3">{props.peopleData.name}</h1>
+                <h1 class="display-3">{peopleData.name}</h1>
                 <hr class="my-2"></hr>
-                <p>{props.peopleData.height}</p>
-                <p>{props.peopleData.mass}</p>
-                <p>{props.peopleData.hair_color}</p>
-                <p>{props.peopleData.skin_color}</p>
+                <p>height: {peopleData.height}</p>
+                <p>mass: {peopleData.mass}</p>
+                <p>hair color: {peopleData.hair_color}</p>
+                <p>skin color: {peopleData.skin_color}</p>
             </div>
         </div>
     )

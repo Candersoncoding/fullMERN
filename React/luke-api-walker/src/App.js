@@ -12,11 +12,8 @@ function App() {
     <div className="App">
       <Router>
         <Main path="/" />
-      </Router>
-      <Form />
-      <Router>
-        <People path="/people/:id" />
-        <Planets path="/planets/:id" />
+        <People path="/people/:_id" />
+        <Planets path="/planets/:_id" />
       </Router>
     </div>
   );

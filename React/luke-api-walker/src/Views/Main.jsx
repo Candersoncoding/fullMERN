@@ -11,6 +11,7 @@ const Main = (props) => {
             <header className="App-header">
                 <h1 className='display-1'>Gather Info about the Galaxy!</h1>
             </header>
+            <Form />
         </div>
     )
 }

@@ -7,7 +7,7 @@ import People from '../Views/People.jsx';
 
 const Form = (props) =>{
 
-    const [currentData, setCurrentData] = useState({})
+
     const [selected, setSelected] = useState("");
     const [id, setId] = useState();
     const [go, setGo] = useState(0);
@@ -15,14 +15,14 @@ const Form = (props) =>{
         
     const handleSubmission = (event) =>{
         event.preventDefault();
-        setGo(go+1);
+        setGo(go+1);       
         navigate(`/${selected}/${id}`);
     };
 
     return(
         <div>
-            <form className="d-flex mx-auto center justify-content-evenly" onSubmit={handleSubmission}>
-                <select className="custom-select col-4 rounded" onChange={(event)=>setSelected(event.target.value)}>
+            <form className="d-flex mx-auto center justify-content-evenly " name="formData" onSubmit={handleSubmission}>
+                <select className="custom-select col-4 rounded" name="selected" onChange={(event)=>setSelected(event.target.value)}>
                     <option selected>Choose:</option>
                     <option value="people">People</option>
                     <option value="planets">Planets</option>
@@ -35,9 +35,9 @@ const Form = (props) =>{
             </form>
             
             {/* <p>{currentData.name}</p> */}
-            {selected === "people" &  go > 0 ? <People data={currentData} select={selected} selectId={id}/> :
-            selected === "planets" & go > 0 ? <Planets data={currentData} select={selected} selectId={id}/> :
-            console.log("type in an id and select people or planets.")}
+            {/* {selected === "people" &  go > 0 ? <People select={selected} selectedId={id}/> :
+            selected === "planets" & go > 0 ? <Planets select={selected} selectedId={id}/> :
+            console.log("type in an id and select people or planets.")} */}
         </div>
     )
 }
