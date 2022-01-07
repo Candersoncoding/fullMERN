@@ -63,3 +63,33 @@ function migratoryBirds(arr) {
     console.log(newArr)
     return hold;
 }
+
+
+// Working on this one still
+
+function tournamentWinner(competitions, results) {
+	let winners = [];
+	for(let i = 0; i < results.length; i++){
+		
+		if(results[i] > 0){
+			console.log(competitions[i][0], "homeTeam")
+			winners.push(competitions[i][0])
+		}
+		else{
+			console.log(competitions[i][1], "awayTeam")
+			winners.push(competitions[i][1])
+		}
+		winners.sort((a,b)=> a-b)
+		
+		// if(results[i] == 0){
+		// 	console.log(competitions[i][i], "homeTeam")
+		// }
+		// else if(i > 1 & results[i] > 0){
+		// 	console.log(competitions[i][i-1])
+		// }
+		// else{
+		// 	console.log(competitions[i][i], "awayTeam")
+		// }
+	}
+	return '';
+}
