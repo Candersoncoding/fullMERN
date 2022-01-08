@@ -8,6 +8,6 @@ const RockSchema = new mongoose.Schema({
     foundDate: Date
 })
 
-const Rock = mongoose.model("Rock", TockSchema);
+const Rock = mongoose.model("Rock", RockSchema);
 
 module.exports = Rock;
