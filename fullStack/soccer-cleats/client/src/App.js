@@ -8,6 +8,8 @@ function App() {
 
   useEffect(()=>{
     axios.get('http://localhost:8000/api/soccer-cleats')
+      .then(res=> console.log(res.data))
+      .catch(err=> console.log(err))
   }, [])
   return (
     <div className="App">

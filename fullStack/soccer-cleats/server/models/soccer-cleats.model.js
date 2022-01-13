@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const SoccerCleatsSchema = new mongoose.Schema({
-    name: String,
+    styleName: String,
     color: String,
     material: String,
     weight: Number,
-    Price: String
+    price: String
 })
 
 const SoccerCleats = mongoose.model("SoccerCleats", SoccerCleatsSchema);
