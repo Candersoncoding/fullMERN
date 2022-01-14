@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import soccerCleatsForm from './components/soccerCleatsForm';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <h1 className='display-1'>Soccer Cleats</h1>
+      <soccerCleatsForm />
       <table className='table w-75 mx-auto center'>
         <thead className='bg-dark text-light'>
           <tr>
