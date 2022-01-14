@@ -2,24 +2,25 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import soccerCleatsForm from './components/soccerCleatsForm';
+import SoccerCleatsForm from './components/SoccerCleatsForm';
 
 
 function App() {
 
-  const [soccerCleats, setSoccerCleats] = useState([]);
-  useEffect(()=>{
-    axios.get('http://localhost:8000/api/soccer-cleats')
-      .then(res=> setSoccerCleats(res.data.soccerCleats))
-      .catch(err=> console.log(err))
-  }, [])
+  // const [soccerCleats, setSoccerCleats] = useState([]);
+
+  // useEffect(()=>{
+  //   axios.get('http://localhost:8000/api/soccer-cleats')
+  //     .then(res=> setSoccerCleats(res.data.soccerCleats))
+  //     .catch(err=> console.log(err))
+  // }, [])
 
 
   return (
     <div className="App">
       <h1 className='display-1'>Soccer Cleats</h1>
-      <soccerCleatsForm />
-      <table className='table w-75 mx-auto center'>
+      <SoccerCleatsForm />
+      {/* <table className='table w-75 mx-auto center'>
         <thead className='bg-dark text-light'>
           <tr>
             <th>Style</th>
@@ -42,7 +43,7 @@ function App() {
             })
           }
         </tbody>
-      </table>
+      </table> */}
     </div>
   );
 }
