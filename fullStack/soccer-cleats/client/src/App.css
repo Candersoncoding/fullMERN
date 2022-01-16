@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background-color: #000000;
+  opacity: 0.7;
+  background-image: radial-gradient(#ffffff 2px, #000000 2px);
+  background-size: 40px 40px;
 }
 
 body > #root > div {

@@ -17,3 +17,9 @@ module.exports.deleteSoccerCleats = (req,res) => {
         .then(deleteConfirmation => res.json(deleteConfirmation))
         .catch(err=> res.json({message: "didn't quite work out there", error: err}));
 }
+
+module.exports.updateSoccerCleats = (req,res) => {
+    SoccerCleats.findOneAndUpdate({_id: req.params.id}, req.body, {new:true})
+        .then(updatedSoccerCleats => res.json(updatedSoccerCleats))
+        .catch(err => res.json({message: "didn't quite work out there", error: err}))
+}

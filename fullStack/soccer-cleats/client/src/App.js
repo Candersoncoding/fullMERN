@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import SoccerCleatsForm from './components/SoccerCleatsForm';
 import trash from './Images/trash_can.png';
+import update from './Images/update.png';
 
 
 function App() {
@@ -25,7 +26,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className='display-1'>Soccer Cleats</h1>
+      <header className='bg-dark text-light p-2'>
+        <h1 className='display-1'>Soccer Cleats</h1>
+      </header>
       <div className='d-flex'>        
         <table className='table w-75 mx-auto center m-3'>
           <thead className='bg-dark text-light'>
@@ -35,6 +38,7 @@ function App() {
               <th>Material</th>
               <th>Weight</th>
               <th>Price</th>
+              <th>Update</th>
               <th>Remove</th>
             </tr>
           </thead>
@@ -47,6 +51,7 @@ function App() {
                           <td>{item.material}</td>
                           <td>{item.weight}</td>
                           <td>${item.price}</td>
+                          <td><img onClick={()=>onDeleteHandler(item._id, i)} src={update} alt="update icon" className='w-25'  /></td>
                           <td><img onClick={()=>onDeleteHandler(item._id, i)} src={trash} alt="trash can icon" className='w-25'  /></td>
                         </tr>
               })
