@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
-const SoccerCleatsSchema = new mongoose.Schema({
-    styleName: String, required:[true, "Style Name is required"],
+const AuthorsSchema = new mongoose.Schema({
+    name: String, required:[true, "Style Name is required"],
     color: String, required:[true, "Color is required"],
     material: String, required:[true, "Material is required"],
     weight: Number, required:[true, "Weight is required"],
     price: String, required:[true, "Price is required"]
 })
 
-const SoccerCleats = mongoose.model("SoccerCleats", SoccerCleatsSchema);
+const Authors = mongoose.model("Authors", AuthorsSchema);
 
-module.exports = SoccerCleats;
+module.exports = Authors;
