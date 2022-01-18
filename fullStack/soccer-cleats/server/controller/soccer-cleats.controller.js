@@ -14,12 +14,18 @@ module.exports.createSoccerCleats = (req,res) => {
 
 module.exports.deleteSoccerCleats = (req,res) => {
     SoccerCleats.deleteOne({_id: req.params.id})
-        .then(deleteConfirmation => res.json(deleteConfirmation))
+        .then(deleteConfirmation => res.json({deleted: deleteConfirmation}))
         .catch(err=> res.json({message: "didn't quite work out there", error: err}));
 }
 
+module.exports.findOneSoccerCleats = (req,res) => {
+    SoccerCleats.findOne({_id: req.params.id})
+        .then(oneSoccerCleats => res.json({soccerCleats: oneSoccerCleats}))
+        .catch(err => res.json({message: "didn't quite work out there", error: err}))
+}
+
 module.exports.updateSoccerCleats = (req,res) => {
-    SoccerCleats.findOneAndUpdate({_id: req.params.id}, req.body, {new:true})
-        .then(updatedSoccerCleats => res.json(updatedSoccerCleats))
+    SoccerCleats.findOneAndUpdate({_id: req.params.id}, req.body, {new:true, runValidators: true})
+        .then(updatedSoccerCleats => res.json({soccerCleats: updatedSoccerCleats}))
         .catch(err => res.json({message: "didn't quite work out there", error: err}))
 }
