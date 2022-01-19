@@ -13,7 +13,7 @@ export default function Main() {
     }, [authors])
   return(
         <div className='d-flex'>
-            <div className='bg-info m-5 rounded tableAuthors'>
+            <div className='bg-info m-5 rounded tableAuthors flex-grow-1'>
                 <table className='bg-light text-light mx-auto center m-2 mt-5 mb-5'>
                     <thead className='bg-dark display-6'>
                         <th>Author</th>
