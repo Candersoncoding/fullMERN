@@ -8,11 +8,14 @@ const Info = (props) => {
 
     const [authorInfo, setAuthorInfo] = useState([]);
     
-    useEffect(()=> {
+    const getAuthor = () => {
         axios.get(`http://localhost:8000/author/${props.id}`)
             .then(res=> setAuthorInfo(res.data.Author))
             .catch(err=> err)
-    }, [authorInfo, props.id])
+    }
+    useEffect(()=> {
+        getAuthor(props.id);
+    }, [props.id])
 
   return(
         <div className='jumbotron bg-info w-75 mx-auto center'>

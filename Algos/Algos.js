@@ -137,3 +137,25 @@ function catAndMouse(x, y, z) {
     }
 
 }
+
+/*
+ * Complete the 'bonAppetit' function below.
+ *
+ * The function accepts following parameters:
+ *  1. INTEGER_ARRAY bill
+ *  2. INTEGER k an integer representing the index of the item Anna doesn't eat
+ *  3. INTEGER b  the amount of money that Anna contributed to the bill
+ * n = the length of the bill array
+ * calculate half of the bill, then calculate the difference between half of the bill and what Anna owes
+ */
+
+function bonAppetit(bill, k, b) {
+    const halfer = (prev, curr) => prev + curr;
+    let newArr = [];
+    for(let i = 0; i < bill.length; i++){
+        (i == k) ? 'cool' : newArr.push(bill[i]);
+    }
+    (b-(newArr.reduce(halfer)/2)) == 0 ? console.log('Bon Appetit') : console.log(b-(newArr.reduce(halfer)/2))  
+
+
+}

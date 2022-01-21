@@ -6,10 +6,13 @@ const Main = () => {
 
     const [authors, setAuthors] = useState([]);
 
-    useEffect(()=>{
+    const getAllAuthors = () => {
         axios.get('http://localhost:8000/authors')
             .then(res => setAuthors(res.data.Author))
             .catch(err => console.log({message: "hey something went wrong", err: err}))
+    }
+    useEffect(()=>{
+        getAllAuthors();
     }, [authors])
   return(
         <div className='d-flex'>
