@@ -1,62 +1,35 @@
-import React, {useState} from 'react'
-import axios from 'axios'
-import {Link, navigate} from '@reach/router';
+import React from 'react'
+import {Link} from '@reach/router';
 
-export default function Form() {
-
-    const [newAuthor, setNewAuthor] = useState({
-        firstName: "",
-        lastName: "",
-        age: 0,
-        careerLength: 0,
-        penName: "",
-        hairColor: ""
-    })
-
-    const handleOnChangeForm = (event) => {
-        setNewAuthor({
-            ...newAuthor,
-            [event.target.name]: event.target.value
-        })
-    }
-
-    const handleOnSubmit = (event) => {
-        event.preventDefault();
-        axios.post('http://localhost:8000/author/create', newAuthor)
-            .then(res => {
-                console.log(newAuthor);
-                navigate("/");
-                })
-            .catch(err=> console.log({message: "that didn't go right, try again", err: err }))
-    }
+export default function Form(props) {
 
     return (
-        <div className='w-50'>
-            <form className='bg-info p-5 m-5 d-flex flex-column align-items-center rounded formNewAuthor' onSubmit={handleOnSubmit}>
-            <h1 className='text-light display-5'>New Author</h1>
+        <div className='w-50 mx-auto center'>
+            <form className='bg-info p-5 m-5 d-flex flex-column align-items-center rounded bgOpacity' onSubmit={props.onHandleSubmitter}>
+            <h1 className='text-light display-5'>{props.title} Author</h1>
 
                 <div className='form-floating m-3 col-8'>
-                    <input className="form-control" name="firstName" type="text" placeholder="Default input" onChange={handleOnChangeForm}/>
+                    <input className="form-control" name="firstName" type="text" placeholder="Default input" onChange={props.changeForm} value={props.form.firstName}/>
                     <label htmlFor="floatingFirstName">First Name</label>
                 </div>
                 <div className='form-floating m-3 col-8'>
-                    <input className="form-control" name="lastName" type="text" placeholder="Default input" onChange={handleOnChangeForm}/>
+                    <input className="form-control" name="lastName" type="text" placeholder="Default input" onChange={props.changeForm} value={props.form.lastName}/>
                     <label htmlFor="floatingLastName">Last Name</label>
                 </div>
                 <div className='form-floating m-3 col-8'>
-                    <input className="form-control" name="age" type="text" placeholder="Default input" onChange={handleOnChangeForm}/>
+                    <input className="form-control" name="age" type="text" placeholder="Default input" onChange={props.changeForm} value={props.form.age}/>
                     <label htmlFor="floatingAge">Age</label>
                 </div>
                 <div className='form-floating m-3 col-8'>
-                    <input className="form-control" name="careerLength" type="text" placeholder="Default input" onChange={handleOnChangeForm}/>
+                    <input className="form-control" name="careerLength" type="text" placeholder="Default input" onChange={props.changeForm} value={props.form.careerLength}/>
                     <label htmlFor="floatingCareerLength">Career Length</label>
                 </div>
                 <div className='form-floating m-3 col-8'>
-                    <input className="form-control" name="penName" type="text" placeholder="Default input" onChange={handleOnChangeForm}/>
+                    <input className="form-control" name="penName" type="text" placeholder="Default input" onChange={props.changeForm} value={props.form.penName}/>
                     <label htmlFor="floatingPenName">Pen Name</label>
                 </div>
                 <div className='form-floating m-3 col-8'>
-                    <input className="form-control" name="hairColor" type="text" placeholder="Default input" onChange={handleOnChangeForm}/>
+                    <input className="form-control" name="hairColor" type="text" placeholder="Default input" onChange={props.changeForm} value={props.form.hairColor}/>
                     <label htmlFor="floatingHairColor">Hair Color</label>
                 </div>
                 <div>

@@ -5,11 +5,7 @@
   background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #363636 21px ), repeating-linear-gradient( #00000055, #000000 );
 }
 
-.formNewAuthor{
-  opacity: .8;
-}
-
-.tableAuthors{
+.bgOpacity{
   opacity: .8;
 }
 
