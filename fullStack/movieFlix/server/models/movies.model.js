@@ -26,7 +26,7 @@ const MoviesSchema = new mongoose.Schema({
         required: [true, "You must enter the movie Rating"]
     },
     releaseDate: {
-        type: Date(),
+        type: Date,
         required: [true, "You must enter the Release Date"]
     },
     inTheaters: {

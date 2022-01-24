@@ -1,6 +1,6 @@
 const Movies = require("../models/movies.model");
 
-module.exports.findAllAuthors = (req, res) => {
+module.exports.findAllMovies = (req, res) => {
     Movies.find()
         .then(allMovies => res.json({Movie: allMovies}))
         .catch(err => res.json({message: "didn't quite work out there", error: err}));
