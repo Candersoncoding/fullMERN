@@ -37,9 +37,9 @@ const MoviesSchema = new mongoose.Schema({
         type: Number,
         required: [true, "You must enter how long the movie is (in minutes)"]
     },
-    images: {
-        type: Image,
-        required: [true, "You need a Film Poster"]
+    image: {
+        type: String,
+        required: [true, "You need a Film Poster image"]
     }
 })
 
