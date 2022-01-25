@@ -5,9 +5,9 @@ const Form = (props) => {
 
     
   return(
-    <div className='mx-auto center w-75 bg-secondary'>
-        <form className='mx-auto center w-75 m-3 p-3' onSubmit={props.onSubmitHandler}>
-            <h1 className='text-light p-3 d-flex flex-start display-5'>New Movie</h1>
+    <div className='mx-auto center w-50 bg-secondary m-3'>
+        <form className='mx-auto center w-75 m-3 p-3 ' onSubmit={props.onSubmitHandler}>
+            <h1 className='text-light p-3 display-5'>New Movie</h1>
             <div className='form-floating m-3'>
                 <input type="text" name="title" className='form-control' placeholder='Default input' onChange={props.onChangeHandler} />
                 <label htmlFor="titleFloating">Title</label>
@@ -19,11 +19,11 @@ const Form = (props) => {
                 </div>
                 <select className='custom-select p-3 bg-light rounded' name="rating" onChange={props.onChangeHandler}>
                     <option placeholder="default value">Choose Rating</option>
-                    <option value="r">R</option>
-                    <option value="pg-13">PG-13</option>
-                    <option value="pg">PG</option>
-                    <option value="g">G</option>
-                    <option value="nr">NR</option>
+                    <option value="R">R</option>
+                    <option value="PG-13">PG-13</option>
+                    <option value="PG">PG</option>
+                    <option value="G">G</option>
+                    <option value="NR">NR</option>
                 </select>
             </div>
             <div className='form-floating m-3'>

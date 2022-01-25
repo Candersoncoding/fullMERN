@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.movieImage{
+  max-width: 200px;
+  max-height: 200px;
+}
+
 body > #root > div {
   height: 100vh;
 }
