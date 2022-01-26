@@ -6,4 +6,5 @@ module.exports = app => {
     app.delete("/movie/delete/:id", MoviesController.deleteMovie);
     app.get("/movie/:id", MoviesController.findOneMovie);
     app.put("/movie/update/:id", MoviesController.updateMovie);
+    app.put("movie/add/actor/:id", MoviesController.actorUpdateMovie);
 }

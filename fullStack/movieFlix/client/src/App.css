@@ -7,6 +7,21 @@
   max-height: 200px;
 }
 
+.movieLink{
+  color: white;
+  text-decoration: none;
+  border: solid 1px white;
+  margin: 4px;
+  padding: 16px;
+  width: 25%;
+}
+
+.movieLink:hover{
+  transform: 1.4;
+  border: dotted 5px dark;
+  color: white;
+}
+
 body > #root > div {
   height: 100vh;
 }

@@ -46,6 +46,9 @@ const MoviesSchema = new mongoose.Schema({
     image: {
         type: String,
         required: [true, "You need a Film Poster image"]
+    },
+    actors: {
+        type: Array
     }
 })
 

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Form from '../components/Form.jsx';
 import axios from 'axios';
+import {Link} from '@reach/router';
 
 const Main = () => {
 
@@ -55,12 +56,12 @@ const Main = () => {
                     <div className='d-flex justify-content-evenly flex-wrap'>
                         {
                             movieList.map((item, i)=>{
-                                return  <div key={i} className='border border-light m-1 p-3 w-25'>
-                                            <h4  className='mx-auto center'>
+                                return  <Link key={i} className='movieLink' to={`/movie/${item._id}`}>
+                                            <h4  className='mx-auto center '>
                                                 {item.title}
                                             </h4>
                                             <img className='movieImage' src={item.image} alt={`image of ${item.title}`} />
-                                        </div>           
+                                        </Link>           
                             })
                         }
                     </div>

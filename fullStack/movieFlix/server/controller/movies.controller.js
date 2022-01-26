@@ -29,3 +29,12 @@ module.exports.updateMovie = (req,res) => {
         .then(updatedMovie => res.json({Movie: updatedMovie}))
         .catch(err => res.json({message: "didn't quite work out there", error: err}))
 }
+
+module.exports.actorUpdateMovie = (req,res) => {
+    Movies.update(
+        {_id: req.params.id},
+        {$push:{actors: req.body.actors}}
+    )
+        .then(result => res.json({result: result}))
+        .catch(err => res.json({message: "didn't quite work out there", error: err}));
+}
