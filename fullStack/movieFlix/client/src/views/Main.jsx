@@ -14,6 +14,8 @@ const Main = () => {
         images: ""
     })
 
+    const [errors, setErrors] = useState({})
+
     const [movieList, setMovieList] = useState([])
 
     useEffect(()=> {
@@ -32,7 +34,15 @@ const Main = () => {
     const onSubmitHandler = (event) => {
         event.preventDefault();
         axios.post('http://localhost:8000/movie/create', form)
-            .then(res => console.log(res))
+            .then(res => {
+                if(res.data.error){
+                    console.log(res.data.error.errors.genre.properties)
+                    setErrors(res.data.error.errors);
+                }
+                else{
+                    console.log(res)
+                }
+            })
             .catch(err => console.log(err))
     }
 
@@ -45,8 +55,8 @@ const Main = () => {
                     <div className='d-flex justify-content-evenly flex-wrap'>
                         {
                             movieList.map((item, i)=>{
-                                return  <div className='border border-light m-1 p-3 w-25'>
-                                            <h4 key={i} className='mx-auto center'>
+                                return  <div key={i} className='border border-light m-1 p-3 w-25'>
+                                            <h4  className='mx-auto center'>
                                                 {item.title}
                                             </h4>
                                             <img className='movieImage' src={item.image} alt={`image of ${item.title}`} />
@@ -55,7 +65,7 @@ const Main = () => {
                         }
                     </div>
                 </div>
-                <Form onChangeHandler={onChangeHandler} onSubmitHandler={onSubmitHandler}/>
+                <Form onChangeHandler={onChangeHandler} onSubmitHandler={onSubmitHandler} error={errors}/>
             </div>
             
         </div>

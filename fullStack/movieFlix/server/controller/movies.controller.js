@@ -8,7 +8,7 @@ module.exports.findAllMovies = (req, res) => {
 
 module.exports.createMovie = (req,res) => {
     Movies.create(req.body)
-        .then(newMovie => res.json({newMovie: newMovie}))
+        .then(newMovie => res.json({newMovie: newMovie}, {new:true, runValidators: true}))
         .catch(err => res.json({message: "didn't quite work out there", error: err}));
 }
 

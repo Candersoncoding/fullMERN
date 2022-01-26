@@ -6,9 +6,9 @@ const MoviesSchema = new mongoose.Schema({
         required: [true, "You must enter the movie Title"],
         validate:{ 
             validator: (input) => {
-            return input.length >= 3;
+            return input.length > 2;
             },
-            message: (input) => `${input} is not enough characters. 3 characters needed minimum.`
+            message: (input) => `${input.value} is not enough characters. 3 characters needed minimum.`
         }   
     },
     genre: {
@@ -16,14 +16,14 @@ const MoviesSchema = new mongoose.Schema({
         required: [true, "You must enter the Genre"],
         validate:{ 
             validator: (input) => {
-            return input.length >= 3;
+            return input.length > 2;
             },
-            message: (input) => `${input} is not enough characters. 3 characters needed minimum.`
+            message: (input) => `${input.value} is not enough characters. 3 characters needed minimum.`
         }
     },
     rating: {
         type: String,
-        required: [true, "You must enter the movie Rating"]
+        required: [true, "You must choose a movie Rating"]
     },
     releaseDate: {
         type: Date,
@@ -35,7 +35,13 @@ const MoviesSchema = new mongoose.Schema({
     },
     length: {
         type: Number,
-        required: [true, "You must enter how long the movie is (in minutes)"]
+        required: [true, "You must enter how long the movie is (in minutes)"],
+        validate:{ 
+            validator: (input) => {
+            return input > 0;
+            },
+            message: (input) => `Movie length must be more than 0. You submitted ${input.value} minutes.`
+        }
     },
     image: {
         type: String,
