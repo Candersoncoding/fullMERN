@@ -7,18 +7,25 @@ const MovieInfo = (props) => {
     const [info, setInfo] = useState({
         actors: []
     });
-    
+    const [actor, setActor] = useState("");
+    const [loaded, setLoaded] = useState(false);
 
     useEffect(()=> {
         axios.get(`http://localhost:8000/movie/${id}`)
-        .then(res => setInfo(res.data.Movie))
+        .then(res => {
+            setInfo(res.data.Movie);
+            setLoaded(true);
+        })
         .catch(err => console.log(err))
-    }, [id]);
+    }, [loaded]);
 
     const onSubmitActor = (event) => {
         event.preventDefault();
-        axios.put(`http://localhost:8000/movie/addactor/${id}`)
-            .then(res => console.log(res))
+        axios.patch(`http://localhost:8000/movie/addactor/${id}`, {actor})
+            .then(res => {
+                console.log(res);
+                setLoaded(false);
+            })
             .catch(err => console.log(err))
     }
 
@@ -39,7 +46,7 @@ const MovieInfo = (props) => {
                 </ul>
                 <form className=' mx-auto center col-8 text-dark' onSubmit={onSubmitActor}>
                     <div className='form-floating'>
-                        <input type="text" name="actors" placeholder='Default Input' className='form-control'/>
+                        <input type="text" name="actors" placeholder='Default Input' className='form-control' onChange={(event) => setActor(event.target.value)}/>
                         <label htmlFor="actorsFloating">Actor Name</label>
                     </div>
                     <input type="submit" value="Add Actor" className='btn btn-outline-light m-3'/>
