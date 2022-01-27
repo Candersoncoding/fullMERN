@@ -47,9 +47,7 @@ const MoviesSchema = new mongoose.Schema({
         type: String,
         required: [true, "You need a Film Poster image"]
     },
-    actors: {
-        type: Array
-    }
+    actors: [String]
 })
 
 const Movies = mongoose.model("Movies", MoviesSchema);

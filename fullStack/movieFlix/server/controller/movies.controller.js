@@ -31,9 +31,9 @@ module.exports.updateMovie = (req,res) => {
 }
 
 module.exports.actorUpdateMovie = (req,res) => {
-    Movies.update(
+    Movies.findOneAndUpdate(
         {_id: req.params.id},
-        {$push:{actors: req.body.actors}}
+        {$push:{actors: req.body.actor}}
     )
         .then(result => res.json({result: result}))
         .catch(err => res.json({message: "didn't quite work out there", error: err}));
