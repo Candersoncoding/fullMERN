@@ -252,3 +252,28 @@ function angryProfessor(k, a) {
     return (onTime.length >= k ? 'NO' : 'YES')
 
 }
+
+// HackerLand Enterprise is adopting a new viral advertising strategy. When they launch a new product, they advertise it to exactly 5 people on social media.
+// On the first day, half of those 5 people (i.e., floor(5/2) ) like the advertisement and each shares it
+// with 3 of their friends. At the beginning of the second day, floor(5/2)*3 = 2*3 = 6 people receive the advertisement.
+
+// Each day, floor(recipients/2) of the recipients like the advertisement and will share it with 3 friends on the following day. 
+// Assuming nobody receives the advertisement twice, determine how many people have liked the ad by the end
+//  of a given day, beginning with launch day as day 1.
+
+function viralAdvertising(n) {
+    // Write your code here
+    let day = n;
+    let shared = 5;
+    let liked = 0;
+    let cumulative = 0;
+    for(let i = 0; i < day; i++){
+        liked = Math.floor(shared/2);
+        shared = (liked * 3);
+        cumulative+=liked;
+        console.log(cumulative, shared, liked);
+        
+    }
+    return cumulative;
+
+}
