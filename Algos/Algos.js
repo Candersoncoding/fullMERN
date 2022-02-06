@@ -277,3 +277,17 @@ function viralAdvertising(n) {
     return cumulative;
 
 }
+
+// Print a staircase of size n using # symbols and spaces.
+
+// Note: The last line must have 0 spaces in it.
+
+
+function staircase(n) {
+    
+    let x = "#"
+    let y = " "
+    for(let i = 1; i <= n; i++){
+        console.log(`${y.repeat(n-i)}${x.repeat(i)}`)
+    }
+}
