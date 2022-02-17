@@ -291,3 +291,18 @@ function staircase(n) {
         console.log(`${y.repeat(n-i)}${x.repeat(i)}`)
     }
 }
+
+/*
+ * Complete the 'camelcase' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts STRING s as parameter.
+ * 
+ * Given a camelCasedString s, determine the number of words in s.
+ */
+
+function camelcase(s) {
+    // Write your code here
+    const matching = s.match(/[A-Z]/g);
+    return matching === null ? 1 : matching.length + 1
+}
